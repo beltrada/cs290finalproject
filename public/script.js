@@ -13,7 +13,6 @@ document.getElementById("add").addEventListener('click', function(event){
   workout.lbs = document.getElementById("lbs").value;
 
   req.open("GET", "http://52.89.154.76:3000/insert?name=" + workout.name + "&reps=" + workout.reps + "&weight=" + workout.weight + "&date=" + workout.date + "&lbs=" + workout.lbs, true);
-  req.setRequestHeader("Content-type", "application/json");
   req.addEventListener("load", function(){
           console.log("done: ", req.status);
                   });
