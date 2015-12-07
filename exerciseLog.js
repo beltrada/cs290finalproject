@@ -44,6 +44,14 @@ app.get('/insert',function(req,res,next){
     context.results = "Inserted id " + result.insertId;
     res.send(JSON.stringify(results));
   });
+  pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = rows;
+    res.send(results);
+  }); 
 });
 
 
@@ -102,3 +110,18 @@ app.get('/reset-table',function(req,res,next){
     })
   });
 });
+
+
+app.use(function(req,res){
+  res.status(404);
+  res.render('404');
+});
+
+app.use(function(err, req, res, next){
+  console.error(err.stack);
+  res.status(500);
+  res.render('500');
+});
+
+app.listen(app.get('port'), function(){
+  console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
