@@ -101,6 +101,8 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
+app.use(express.static('public'));
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
