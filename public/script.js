@@ -17,8 +17,7 @@ document.getElementById("add").addEventListener('click', function(event){
           console.log("done: ", req.status);
                   });
   req.send(null);
-
-}
+})
 
 
 
