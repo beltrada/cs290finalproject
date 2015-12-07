@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Reps</th>
+            <th>Weight</th>
+            <th>Date</th>
+            <th>Lbs/Kgs</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each results}}
+        this should print two times.
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.reps}}</td>
+            <td>{{this.weight}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.lbs}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
