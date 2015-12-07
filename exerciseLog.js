@@ -8,7 +8,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
-app.get('/index.html',function(req,res,next){
+app.get('/',function(req,res,next){
   var context = {};
   mysql.pool.query('SELECT * FROM workout', function(err, rows, fields){
     if(err){
@@ -22,7 +22,7 @@ app.get('/index.html',function(req,res,next){
 
 app.get('/insert',function(req,res,next){
   var context = {};
-  mysql.pool.query("INSERT INTO workout (`name`) VALUES (?)", [req.query.name], function(err, result){
+  mysql.pool.query("INSERT INTO workout (`name`, `reps`, `weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
     if(err){
       next(err);
       return;

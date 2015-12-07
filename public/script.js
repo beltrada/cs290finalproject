@@ -4,15 +4,13 @@ function bindButtons(){
 
 document.getElementById("add").addEventListener('click', function(event){
   var req = new XMLHttpRequest();
-  var workout = {name: NULL, reps: NULL, weight: NULL, date: NULL, lbs: NULL};
+  var name = document.getElementById("name").value;
+  var reps = document.getElementById("reps").value;
+  var weight = document.getElementById("weight").value;
+  var date = document.getElementById("date").value;
+  var lbs = document.getElementById("lbs").value;
 
-  workout.name = document.getElementById("name").value;
-  workout.reps = document.getElementById("reps").value;
-  workout.weight = document.getElementById("weight").value;
-  workout.date = document.getElementById("date").value;
-  workout.lbs = document.getElementById("lbs").value;
-
-  req.open("GET", "http://52.89.154.76:3000/insert?name=" + workout.name + "&reps=" + workout.reps + "&weight=" + workout.weight + "&date=" + workout.date + "&lbs=" + workout.lbs, true);
+  req.open("GET", "http://52.89.154.76:3000/insert?name=" + name + "&reps=" + reps + "&weight=" + weight + "&date=" + date + "&lbs=" + lbs, true);
   req.addEventListener("load", function(){
           console.log("done: ", req.status);
                   });
