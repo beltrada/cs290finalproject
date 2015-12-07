@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Exercis Log</title>
+		<script type="text/javascript" src = "script.js"></script>
+	</head>
+	<body>
+		<h1>Exercis Log</h1>
+		<div>
+			<p>
+				<form>
+					<fieldset>
+						<legend>Exercise Name</legend>
+						<p>Name: <input type="text" id = "name" name="name" /></p>
+						<p>Reps: <input type = "number" id = "reps"  name ="reps"/></p>
+						<p>Weight: <input type = "number" id = "weight" name ="weight"/></p>
+						<p>Date: <input type = "date" id = "date" name ="date"/></p>
+						<p>lbs: <select>
+							<option value = "1">Yes</option>
+							<option value = "0">No</option>
+						</select></p>
+					</fieldset>
+					<p><input type ="submit" id ="add" value = "Add Exercise"/></p>
+				</form>
+			</p>
+		</div>
+		<div>
+			<table id = "table1" border = "1" cellpadding = "2">
+				<tr>
+					<td><b>Name</b></td>
+					<td><b>Reps</b></td>
+					<td><b>Weight</b></td>
+					<td><b>Date</b></td>
+					<td><b>lbs</b></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
